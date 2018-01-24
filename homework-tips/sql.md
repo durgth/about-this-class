@@ -35,3 +35,5 @@
 	- Don't forget the semicolon at the end of each SQL command!
 	- Committing your work to git after each part will help prevent 
 	tragic mistakes 
+    - The first question may say you need an "ORDER BY" clause. I didn't,
+      and that is misleading. 
