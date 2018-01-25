@@ -37,3 +37,7 @@
 	tragic mistakes 
     - The first question may say you need an "ORDER BY" clause. I didn't,
       and that is misleading. 
+
+- Latest binaries for testing code. Fixes a bug affecting some windows and linux systems
+    - http://public.cpsc213.io/cpsc213sqlhw-linux-v2.0
+    - http://public.cpsc213.io/cpsc213sqlhw-mac-v2.0
