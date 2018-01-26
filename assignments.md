@@ -118,6 +118,12 @@ As you can [read more about here](https://gist.github.com/subfuzion/08c5d85437d5
 have put that JSON content in a file and sent it in the POST body, instead of writing it on 
 the command line. 
 
+To see all your assignment submissions and their fields, do the following:
+
+```
+curl -H "Authorization: Bearer $JWT" 'https://www.cpsc213.io/rest/assignment_submissions?select=id,assignment_field_submissions(body)'
+```
+
 And, that's it. We created the assignment submission and filled in the assignment
 fields that were required. A few thoughts:
 
