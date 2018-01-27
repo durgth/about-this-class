@@ -4,7 +4,7 @@ You'll submit assignments through the class API. The relevant API
 endpoints are
 
 As with most API requests, you'll need a JSON Web Token, which you
-can get from your [class dashboard](https://www.cpsc213.io/dashboard).
+can get from your [class dashboard](https://www.cpsc213.io/#/dashboard).
 See the [quiz submission instructions](quizzes.md) for how to get that
 into your `JWT` environment. 
 
@@ -74,7 +74,7 @@ To submit the assignment, we need to create an
 [assignment submission](https://www.cpsc213.io/openapi/#/assignment_submissions/post_assignment_submissions) and then
 submit each of the fields. As with quizzes, we do this with a POST request.
 To create an assignment submission, we'll need our user id, which you can find
-in [class dashboard](https://www.cpsc213.io/dashboard). In my example case, 
+in [class dashboard](https://www.cpsc213.io/#/dashboard). In my example case, 
 the user id is 66. I'm going to create an assignment submission for this
 assignment as follows:
 
