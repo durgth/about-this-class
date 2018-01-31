@@ -121,7 +121,7 @@ the command line.
 To see all your assignment submissions and their fields, do the following:
 
 ```
-curl -H "Authorization: Bearer $JWT" 'https://www.cpsc213.io/rest/assignment_submissions?select=id,assignment_field_submissions(body)'
+curl -H "Authorization: Bearer $JWT" 'https://www.cpsc213.io/rest/assignment_submissions?select=id,assignment_slug,assignment_field_submissions(body)'
 ```
 
 And, that's it. We created the assignment submission and filled in the assignment
