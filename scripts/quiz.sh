@@ -6,9 +6,12 @@
 # gets the full list of classes
 curl 'https://www.cpsc213.io/rest/meetings?order=begins_at&select=id,title,slug,begins_at' | jq
 
-# reading in the specific class' id and the user's JWT
+# reading in the specific class' id and the user's JWT, if it's not already stored
 read -p "Class id: "  classid
-read -p "JWT: "  JWT
+
+if [[ -z $JWT ]]; then
+    read -p "JWT: " JWT
+fi
 
 # gets the quiz information for the class
 curl -H "Authorization: Bearer $JWT" "https://www.cpsc213.io/rest/quizzes?meeting_id=eq.$classid" | jq
@@ -29,5 +32,10 @@ echo
 while true
 do
     read answer
-    curl -H "Authorization: Bearer $JWT" -X POST -d "quiz_question_option_id=$answer" 'https://www.cpsc213.io/rest/quiz_answers'
+    if [[ $answer =~ ^[0-9]+$ ]]; then
+        curl -H "Authorization: Bearer $JWT" -X POST -d "quiz_question_option_id=$answer" 'https://www.cpsc213.io/rest/quiz_answers'
+        echo "POSTed answer $answer"
+    else
+        echo "That wasn't an integer -- please only enter integer ids!"
+    fi
 done
