@@ -25,7 +25,7 @@ curl -H "Authorization: Bearer $JWT" -X POST -d "quiz_id=$quizid" 'https://www.c
 # gets the list of questions
 curl -H "Authorization: Bearer $JWT" "https://www.cpsc213.io/rest/quiz_questions?quiz_id=eq.$quizid&select=id,body,quiz_question_options(id,body)" | jq
 
-echo "Answers:"
+echo "Answers: (type quit to quit)"
 echo
 
 # gets answers and sends requests out
@@ -35,6 +35,8 @@ do
     if [[ $answer =~ ^[0-9]+$ ]]; then
         curl -H "Authorization: Bearer $JWT" -X POST -d "quiz_question_option_id=$answer" 'https://www.cpsc213.io/rest/quiz_answers'
         echo "POSTed answer $answer"
+    elif [[ "$answer" == "quit" ]]; then
+        exit
     else
         echo "That wasn't an integer -- please only enter integer ids!"
     fi
