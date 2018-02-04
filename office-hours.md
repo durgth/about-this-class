@@ -6,4 +6,4 @@
 | Abhi Moturi | W 3-5PM SOM L400 [Evans Hall]|
 | Jacob Bendicksen | W 5-6PM CTL tables, Sun 2-4 CTL 120B | 
 | Summer Wu | Sun 2-4 CTL 120B | 
-| Annie Chen | M 12-2 CTL tables, extra hours TBD |
+| Annie Chen | M 12-2PM CTL tables, 7-8PM CTL tables |
