@@ -21,7 +21,7 @@ read -p "Quiz id: " quizid
 
 open=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $JWT" -X POST -d "quiz_id=$quizid" 'https://www.cpsc213.io/rest/quiz_submissions')
 
-if [[ $open -ne 200 ]]; then
+if [[ $open -ne 200 ]] && [[$open -ne 201 ]]; then
     echo
     echo "Can't create submission, exiting"
     echo "HTTP status code: $open"
